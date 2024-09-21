@@ -8,6 +8,7 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - ask_skck_requirements
 
 responses:
   utter_greet:
@@ -28,6 +29,21 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+  utter_skck_requirements:
+  - text: |
+        Setelah Anda mendapatkan surat pengantar dari Kelurahan dan rekomendasi ke Kantor Kecamatan, sebelum mengurus SKCK ke Polsek atau Polres, silakan lengkapi persyaratan ini.
+        Bagi WNI (Warga Negara Indonesia):
+        - Fotokopi Kartu Tanda Penduduk (KTP) atau Surat Izin Mengemudi (SIM).
+        - Fotokopi Kartu Keluarga (KK).
+        - Fotokopi Akta Kelahiran/Surat Kenal Lahir/Ijazah Terakhir.
+        - Pas foto 4x6 berlatar merah sebanyak 6 lembar.
+
+        WNA (Warga Negara Asing):
+        - Fotokopi Paspor.
+        - Surat Sponsor dari Perusahaan (Asli).
+        - Fotokopi Surat Nikah.
+        - Fotokopi Kartu Izin Tinggal Terbatas (Kitas) atau Kartu Izin Tinggal Tetap (Kitap).
+        - Pas foto 4x6 berlatar kuning sebanyak 6 lembar.
 
 session_config:
   session_expiration_time: 60

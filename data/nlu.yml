@@ -89,3 +89,10 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: ask_skck_requirements
+  examples: |
+    - apa persyaratan pembuatan SKCK?
+    - apa saja syarat membuat SKCK?
+    - bagaimana cara membuat SKCK?
+    - dokumen apa yang dibutuhkan untuk membuat SKCK?
