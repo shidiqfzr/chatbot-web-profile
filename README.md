@@ -20,7 +20,7 @@ Setelah Anda mendapatkan surat pengantar dari Kelurahan dan rekomendasi ke Kanto
   - Fotokopi Kartu Izin Tinggal Terbatas (Kitas) atau Kartu Izin Tinggal Tetap (Kitap).
   - Pas foto 4x6 berlatar kuning sebanyak 6 lembar.
 
-1. buka file data/nlu.yml.
+1. **buka file `data/nlu.yml`**
 Tambahkan intent baru, misalnya ask_skck_requirements, dengan beberapa contoh pertanyaan pengguna.
 ```yml
 - intent: ask_skck_requirements
@@ -29,8 +29,9 @@ Tambahkan intent baru, misalnya ask_skck_requirements, dengan beberapa contoh pe
       - apa saja syarat membuat SKCK?
       - bagaimana cara membuat SKCK?
       - dokumen apa yang dibutuhkan untuk membuat SKCK?
+```
 
-2. Buka file domain.yml.
+2. **Buka file `domain.yml`**
 Tambahkan respons di bagian responses.
 ```yml
 responses:
@@ -50,21 +51,21 @@ responses:
         - Fotokopi Surat Nikah.
         - Fotokopi Kartu Izin Tinggal Terbatas (Kitas) atau Kartu Izin Tinggal Tetap (Kitap).
         - Pas foto 4x6 berlatar kuning sebanyak 6 lembar.
-
-3. Buka file data/rules.yml. Tambahkan rule baru.
+```
+3. **Buka file `data/rules.yml` Tambahkan rule baru.**
 ```yml
 rules:
   - rule: Respond to ask_skck_requirements
     steps:
       - intent: ask_skck_requirements
       - action: utter_skck_requirements
-
-4. train lagi modelnya:
+```
+4. **train lagi modelnya**
 ```bash
 rasa train
-
-5. jalankan lagi chabotnya:
+```
+5. **jalankan lagi chabotnya**
 ```bash
 rasa shell
-
-Silahkan coba tanyakan.
+```
+Silahkan coba tanyakan pada chatbotnya.
