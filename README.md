@@ -5,6 +5,7 @@ misalnya, jika user bertanya pertanyaan" berikut:
 - apa saja syarat membuat SKCK?
 - bagaimana cara membuat SKCK?
 - dokumen apa yang dibutuhkan untuk membuat SKCK?
+
 Diharapkan jawabannya sebagai berikut:
 Setelah Anda mendapatkan surat pengantar dari Kelurahan dan rekomendasi ke Kantor Kecamatan, sebelum mengurus SKCK ke Polsek atau Polres, silakan lengkapi persyaratan ini.
   **Bagi WNI (Warga Negara Indonesia):**
@@ -19,16 +20,19 @@ Setelah Anda mendapatkan surat pengantar dari Kelurahan dan rekomendasi ke Kanto
   - Fotokopi Kartu Izin Tinggal Terbatas (Kitas) atau Kartu Izin Tinggal Tetap (Kitap).
   - Pas foto 4x6 berlatar kuning sebanyak 6 lembar.
 
-Pertama, buka file data/nlu.yml.
+1. buka file data/nlu.yml.
 Tambahkan intent baru, misalnya ask_skck_requirements, dengan beberapa contoh pertanyaan pengguna.
+```yml
 - intent: ask_skck_requirements
     examples: |
       - apa persyaratan pembuatan SKCK?
       - apa saja syarat membuat SKCK?
       - bagaimana cara membuat SKCK?
       - dokumen apa yang dibutuhkan untuk membuat SKCK?
-Kedua, Buka file domain.yml.
+
+2. Buka file domain.yml.
 Tambahkan respons di bagian responses.
+```yml
 responses:
   utter_skck_requirements:
     - text: |
@@ -47,17 +51,20 @@ responses:
         - Fotokopi Kartu Izin Tinggal Terbatas (Kitas) atau Kartu Izin Tinggal Tetap (Kitap).
         - Pas foto 4x6 berlatar kuning sebanyak 6 lembar.
 
-Ketiga, Buka file data/rules.yml. Tambahkan rule baru.
+3. Buka file data/rules.yml. Tambahkan rule baru.
+```yml
 rules:
   - rule: Respond to ask_skck_requirements
     steps:
       - intent: ask_skck_requirements
       - action: utter_skck_requirements
 
-Keempat, train lagi modelnya:
+4. train lagi modelnya:
+```bash
 rasa train
 
-Kelima, jalankan lagi chabotnya:
+5. jalankan lagi chabotnya:
+```bash
 rasa shell
 
 Silahkan coba tanyakan.
